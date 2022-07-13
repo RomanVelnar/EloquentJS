@@ -1,41 +1,21 @@
-function isEven(number){
-    if(number == 0){
-        return true;
-    } else {
-        return(number % 2 == 0) ? true : false;
+// first method
+function countBs1(str) {
+    let counting = 0;
+    for ( let i = 0; i < str.length; i++) {
+        if (str.charAt(i) === "B") {
+            counting++;
+        }
     }
-    return isEven(number - 2);
+    return (counting);
 }
 
-console.log(isEven(-1))
+console.log(countBs1("BbwheBBB"))
 
 
 // second method
-
-function even(n) {
-    if(n < 0){
-        return even(-n);
-    } else if(n % 2 == 0){
-        return true;
-    } else if(n % 2 == 1){
-        return false;
-    }
+function countBs(string){
+    let count = string.length;
+    let count1 = string.replace(/B/g, "").length;
+    return count - count1;
 }
-console.log(even(2))
-
-
-// or
-
-function evenNumber(num) {
-    if(num < 0){
-        return even(-num);
-    } else if (num == 0){
-        return true;
-    } else if(num == 1) {
-        return false;
-    } else {
-        return evenNumber(num - 2);
-    }
-}
-
-console.log(evenNumber(2))
+console.log(countBs(BabbabBBe));
