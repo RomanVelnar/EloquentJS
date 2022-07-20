@@ -32,9 +32,56 @@ function arrayToList(array) {
     return result;
 }
 
-
 console.log(arrayToList([4, 3, 2, 1]))
 
-function listToArray() {
 
+// Function listToArray
+
+
+function listToArray() {
+    let result = [];
+    if(typeof list ==="undefined" || list.value === undefined || undefined) {
+        return result;
+    } else {
+        result.push(list.value);
+        while (list.hasOwnProperty("rest") && list.rest !== null) {
+            list = list.rest;
+            if (list.hasOwnProperty("value")) {
+                result.push(list.value);
+            }
+        } 
+    }
+    return result;
 }
+
+console.log(listToArray((arrayToList(10, 20, 30))))
+
+
+// Function Prepend
+
+function prepend(element, list) {
+    return {
+        value: element,
+        rest: list 
+    };
+}
+
+// Function nth
+
+function nth(list, number) {
+    return listToArray(list)[number];
+}
+
+// Function nthRecursive
+
+function nthRecursive(list, number) {
+    if (number === 0) {
+        return list.value;
+    } else if (list.rest === null) {
+        return undefined;
+    } else {
+        return nthRecursive(list.rest, number-1);
+    }
+}
+
+
