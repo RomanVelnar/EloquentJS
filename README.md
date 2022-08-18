@@ -1,5 +1,5 @@
 # EloquentJS
-Collection of Javascript excercises found in the book called Eloquent JavaScript, written by Marijn Haverbeke(Third Edition, 2019)
+Collection of Javascript excercises found in the book called Eloquent JavaScript(Third Edition), written by Marijn Haverbeke(2019)
 
 ## 1. Program Structure
 ### 1.1 Looping a Triangle
